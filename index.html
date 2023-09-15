@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Random Partner Generator</title>
+	<style type="text/css">
+		*{box-sizing: border-box;}
+		body, html{padding: 0; margin: 0; font-family: sans-serif;}
+		.generator{background: whitesmoke; display: flex; justify-content: center; align-items: center; min-height: 100vh vh ; padding: 5% 15px;}
+		.generator .content-width{width: 750px; max-width: 100%; background: white; padding: 2em; border-radius: 5px; box-shadow: 0 0 10px rgba(0 0 0 / 10%);}
+		.inputs{display: grid; grid-gap: 3em;}
+		textarea{width: 100%; height: 150px; border-radius: 5px; border: 1px solid #ccc; font-family: sans-serif; padding: 10px; font-size: 15px;}
+		label{display: block; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;}
+		h1{margin-bottom: 3em; text-align: center;}
+		.button-container{margin-top: 10px;}
+		button{border: none; background: #222; color: white; font-size: 12px; font-weight: bold; text-transform: uppercase; padding: 15px; border-radius: 5px; letter-spacing: .5px; cursor: pointer;}
+		button:hover{opacity: .8;}
+	</style>
+</head>
+<body>
+	<section class="generator">
+		<div class="content-width">
+			<h1>Random Partner Generator</h1>
+			<div class="inputs">
+				<div class="enter-names">
+					<label for="individuals">Enter Individuals (One Name Per Line)</label>
+					<textarea id="individuals"></textarea>
+					<div class="button-container">
+						<button onclick="partnerIt()">Randomize Partners</button>
+					</div>
+				</div>
+				<div class="grab-names">
+					<label for="partners">Random Partners</label>
+					<textarea id="partners"></textarea>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		function partnerIt(){
+			let individuals = document.getElementById("individuals").value;
+			let individualsArray = individuals.split('\n');
+			console.log(individualsArray);
+		}
+	</script>
+
+</body>
+</html>
